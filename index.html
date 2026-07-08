@@ -1,0 +1,826 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bom de Prato | 30 Dias de Carne Mo&iacute;da Sem Repetir</title>
+  <meta name="description" content="Descubra como comer carne moída por 30 dias sem repetir nenhum prato, com receitas simples, econômicas e fáceis de fazer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4253456771632039');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=4253456771632039&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: #ffffff; overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif; color: #1a1a1a; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #fdecea; }
+    ::-webkit-scrollbar-thumb { background: #c0392b; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #a32d2d; }
+
+    @keyframes pulseRed { 0%,100% { box-shadow: 0 8px 0 #8f241b, 0 18px 32px rgba(192,57,43,.28); } 50% { box-shadow: 0 8px 0 #8f241b, 0 22px 48px rgba(192,57,43,.45); } }
+    @keyframes pulseStrong { 0%,100% { box-shadow: 0 8px 0 #8f241b, 0 18px 32px rgba(192,57,43,.35); transform: scale(1); } 50% { box-shadow: 0 8px 0 #8f241b, 0 24px 56px rgba(192,57,43,.58); transform: scale(1.035); } }
+    @keyframes pulseGreen { 0%,100% { box-shadow: 0 8px 0 #0b5f35, 0 18px 40px rgba(18,154,86,.5), 0 0 0 0 rgba(32,196,107,0); transform: scale(1); } 50% { box-shadow: 0 8px 0 #0b5f35, 0 28px 70px rgba(18,154,86,.8), 0 0 0 14px rgba(32,196,107,.18); transform: scale(1.06); } }
+    @keyframes pulseLight { 0%,100% { box-shadow: 0 8px 0 #d8d8d8, 0 18px 34px rgba(0,0,0,.18); transform: scale(1); } 50% { box-shadow: 0 8px 0 #d8d8d8, 0 24px 54px rgba(0,0,0,.28); transform: scale(1.035); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+
+
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s, transform .7s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .container { max-width: 1024px; margin: 0 auto; padding: 0 24px; }
+    .container-sm { max-width: 800px; margin: 0 auto; }
+    .grad { background: linear-gradient(90deg,#c0392b,#e74c3c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(180deg,#e95545,#c0392b); color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif; font-weight: 800; font-size: 16px; padding: 18px 44px; border-radius: 12px; border: none; cursor: pointer; box-shadow: 0 8px 0 #8f241b, 0 18px 32px rgba(192,57,43,.28); animation: none; transition: transform .2s, opacity .2s, box-shadow .2s; text-align: center; text-transform: uppercase; }
+    .btn-primary:hover { transform: translateY(-2px); opacity: .96; box-shadow: 0 10px 0 #8f241b, 0 24px 42px rgba(192,57,43,.35); }
+    .btn-primary:active { transform: translateY(5px); box-shadow: 0 3px 0 #8f241b, 0 10px 20px rgba(192,57,43,.25); }
+    .btn-primary.small { padding: 14px 32px; font-size: 14px; }
+    .btn-primary.pulse { animation: pulseStrong 1.55s ease-in-out infinite; }
+    .btn-primary.buy-button { background: linear-gradient(180deg,#20c46b,#119955); box-shadow: 0 8px 0 #0b5f35, 0 18px 34px rgba(18,154,86,.38); animation: pulseGreen 0.9s ease-in-out infinite; }
+    .btn-primary.buy-button:hover { box-shadow: 0 10px 0 #0b5f35, 0 26px 52px rgba(18,154,86,.48); }
+    .btn-primary.buy-button:active { box-shadow: 0 3px 0 #0b5f35, 0 10px 20px rgba(18,154,86,.28); }
+
+    .top-bar { display: none; }
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      padding: 12px 24px; height: 56px;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .site-header .brand { display: flex; align-items: center; gap: 10px; }
+    .site-header .brand .logo-icon {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg,#c0392b,#a32d2d);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 12px rgba(192,57,43,.3);
+    }
+    .site-header .brand .logo-icon svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .site-header .brand .brand-text { text-align: left; }
+    .site-header .brand .brand-text strong { font-size: 16px; font-weight: 800; color: #1a1a1a; line-height: 1; letter-spacing: -.3px; display: block; }
+    .site-header .brand .brand-text span { font-size: 9px; font-weight: 600; color: #c0392b; text-transform: uppercase; letter-spacing: 1.5px; }
+
+    .hero { background: linear-gradient(135deg,#ffffff 0%,#fef5f4 50%,#ffffff 100%); padding: 116px 24px 60px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle,rgba(192,57,43,.06),transparent 65%); pointer-events: none; }
+    .hero .container { width: 100%; min-width: 0; max-width: 720px; margin: 0 auto; text-align: center; padding: 0 24px; }
+    .hero-content { animation: fadeUp .8s ease forwards; }
+    .hero-content h1 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif; font-size: clamp(42px,7vw,72px); line-height: 1.05; color: #1a1a1a; letter-spacing: 0px; margin-bottom: 16px; font-weight: 900; }
+    .hero-content p { font-size: 17px; color: #555; line-height: 1.7; max-width: 520px; margin: 0 auto 24px; }
+
+    /* Recipe carousel */
+    .recipe-carousel { width: 100%; max-width: 880px; margin: 36px auto 0; overflow: hidden;  }
+    .recipe-carousel-track { display: flex; gap: 16px; width: max-content; animation: scrollCarousel 30s linear infinite; }
+    .recipe-carousel:hover .recipe-carousel-track { animation-play-state: paused; }
+    .recipe-carousel-card { flex-shrink: 0; width: 320px; height: 320px; border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+    .recipe-carousel-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+    .recipe-carousel-card img { width: 100%; height: 100%; object-fit: cover; }
+    .recipe-carousel-card .label { display: none; }
+    @keyframes scrollCarousel { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    @media (max-width:768px) {
+      .recipe-carousel-card { width: 260px; height: 260px; border-radius: 18px; }
+      .recipe-carousel-card .label { font-size: 12px; }
+      .recipe-carousel { margin-top: 28px; }
+    }
+    @media (max-width:480px) {
+      .recipe-carousel-card { width: 220px; height: 220px; border-radius: 16px; }
+    }
+
+    .sec { padding: 88px 0; }
+    .sec-white { background: #ffffff; }
+    .sec-red-light { background: #fef5f4; }
+    .sec-dark { background: #1a1a1a; }
+    .sec-dark .sec-head h2 { color: #ffffff; }
+    .sec-dark .sec-head p { color: #aaa; }
+    .sec-head { text-align: center; margin-bottom: 48px; }
+    .sec-head h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif; font-size: clamp(26px,4vw,40px); color: #1a1a1a; letter-spacing: 0px; margin-bottom: 12px; font-weight: 900; }
+    .sec-head p { font-size: 16px; color: #6b6b6b; max-width: 600px; margin: 0 auto; }
+
+    .recipes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .recipe-card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06); transition: transform .3s, box-shadow .3s; }
+    .recipe-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.1); }
+    .recipe-card .img-wrap { height: 200px; overflow: hidden; position: relative; }
+    .recipe-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .recipe-card:hover .img-wrap img { transform: scale(1.05); }
+    .recipe-card .tag { position: absolute; top: 12px; left: 12px; background: rgba(192,57,43,.9); color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding: 4px 10px; border-radius: 100px; }
+    .recipe-card .info { padding: 16px 18px 18px; }
+    .recipe-card .info h3 { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+    .recipe-card .info p { font-size: 13px; color: #888; line-height: 1.5; }
+
+    .benefits-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .benefit-card { text-align: center; padding: 36px 24px; border-radius: 16px; background: #ffffff; box-shadow: 0 4px 24px rgba(0,0,0,.04); border: 1px solid rgba(0,0,0,.04); transition: transform .3s; }
+    .benefit-card:hover { transform: translateY(-4px); }
+    .benefit-card .icon { width: 56px; height: 56px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 16px; }
+    .benefit-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .benefit-card p { font-size: 14px; color: #777; line-height: 1.6; }
+
+    .rating-box { display: flex; align-items: center; gap: 32px; background: #ffffff; border: 1.5px solid #fdecea; border-radius: 16px; padding: 28px 36px; max-width: 520px; margin: 0 auto 48px; box-shadow: 0 4px 20px rgba(0,0,0,.04); }
+    .rating-box .score { text-align: center; flex-shrink: 0; min-width: 120px; border-right: 0; padding-right: 0; margin: 0 auto; }
+    .rating-box .score .num { font-size: 52px; font-weight: 900; color: #1a1a1a; line-height: 1; }
+    .rating-box .score .stars { color: #c0392b; font-size: 18px; letter-spacing: 2px; margin: 4px 0; }
+    .rating-box .score .total { font-size: 12px; color: #999; }
+    .testimonial-carousel { position: relative; max-width: 440px; margin: 0 auto; }
+    .testimonial-viewport { position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 18px 56px rgba(0,0,0,.14); background: #111; }
+    .testimonial-track { display: flex; transition: transform .45s cubic-bezier(.22,1,.36,1); will-change: transform; }
+    .testimonial-slide { min-width: 100%; background: #111; }
+    .testimonial-slide img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+    .testimonial-nav { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; }
+    .testimonial-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(255,255,255,.92); color: #c0392b;
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      z-index: 10; box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      transition: transform .2s, background .2s, box-shadow .2s;
+    }
+    .testimonial-btn:hover { transform: translateY(-50%) scale(1.12); background: #fff; box-shadow: 0 8px 28px rgba(0,0,0,.35); }
+    .testimonial-btn[data-testimonial-prev] { left: 10px; }
+    .testimonial-btn[data-testimonial-next] { right: 10px; }
+    .testimonial-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .testimonial-dots { display: flex; align-items: center; justify-content: center; gap: 10px; min-width: 80px; }
+    .testimonial-dot { width: 10px; height: 10px; border-radius: 999px; border: 0; background: rgba(192,57,43,.3); cursor: pointer; transition: width .25s, background .25s; }
+    .testimonial-dot.active { width: 28px; background: #c0392b; }
+
+    .pricing-grid { display: flex; justify-content: center; max-width: 600px; margin: 0 auto; }
+    .pricing-card { border-radius: 24px; overflow: hidden; position: relative; transition: transform .3s; box-shadow: 0 12px 48px rgba(192,57,43,.2); }
+    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-card .pricing-top { background: linear-gradient(135deg,#c0392b,#a32d2d); padding: 32px 32px 24px; text-align: center; position: relative; }
+    .pricing-card .pricing-top::after { content: ''; position: absolute; bottom: -20px; left: 0; right: 0; height: 40px; background: #ffffff; border-radius: 50% 50% 0 0; }
+    .pricing-card .popular { display: inline-block; background: rgba(255,255,255,.15); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 5px 18px; border-radius: 100px; margin-bottom: 16px; backdrop-filter: blur(4px); }
+    .pricing-card .pricing-top h3 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif; font-size: 22px; color: #fff; font-weight: 700; margin-bottom: 16px; }
+    .pricing-card .anchor-price { display: inline-block; color: rgba(255,255,255,.72); font-size: 15px; font-weight: 700; text-decoration: line-through; margin-bottom: 6px; }
+    .pricing-card .price-label { color: rgba(255,255,255,.9); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; }
+    .pricing-card .price { margin-bottom: 4px; }
+    .pricing-card .price .currency { font-size: 22px; font-weight: 700; vertical-align: super; color: #fff; }
+    .pricing-card .price .integer { font-size: 64px; font-weight: 900; line-height: 1; color: #fff; }
+    .pricing-card .price .cents { font-size: 28px; font-weight: 700; vertical-align: super; color: #fff; }
+    .pricing-card .price .old { font-size: 14px; color: rgba(255,255,255,.6); text-decoration: line-through; display: block; margin-top: 2px; }
+    .pricing-card .pricing-body { background: #ffffff; padding: 32px 32px 36px; }
+    .pricing-card .pricing-body ul { list-style: none; margin-bottom: 28px; }
+    .pricing-card .pricing-body ul li { padding: 8px 0; font-size: 14px; display: flex; align-items: center; gap: 10px; color: #1a1a1a; border-bottom: 1px solid rgba(192,57,43,.06); }
+    .pricing-card .pricing-body ul li:last-child { border-bottom: none; }
+    .pricing-card .pricing-body ul li .check { width: 20px; height: 20px; border-radius: 50%; background: #c0392b; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; color: #fff; }
+    .pricing-card .btn-primary { color: #fff; display: flex; width: 100%; }
+    .pricing-card .guarantee { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 14px; font-size: 12px; color: #888; }
+    .pricing-card .guarantee strong { color: #c0392b; font-weight: 600; }
+    .urgency-note { color: #a32d2d; font-size: 13px; font-weight: 900; text-align: center; text-transform: uppercase; letter-spacing: .7px; margin: 0 0 14px; }
+    .guarantee-section { background: #fff; border: 2px solid #fdecea; border-radius: 18px; max-width: 720px; margin: 32px auto 0; padding: 28px; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,.05); }
+    .guarantee-section h3 { font-size: clamp(22px,3vw,30px); font-weight: 900; color: #1a1a1a; margin-bottom: 10px; }
+    .guarantee-section p { font-size: 15px; color: #666; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+    /* Pain gallery */
+    .dor-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 900px; margin: 0 auto 40px; }
+    .dor-card { text-align: center; }
+    .dor-card .dor-img {
+      aspect-ratio: 3/2; border-radius: 20px; overflow: hidden;
+      background: #fef5f4; border: 2px solid #fdecea;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .dor-card .dor-img img { width: 100%; height: 100%; object-fit: contain; }
+    .dor-card .dor-img .dor-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      padding: 20px;
+    }
+    .dor-card .dor-img .dor-placeholder svg { width: 48px; height: 48px; fill: none; stroke: #c0392b; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; opacity: .45; }
+    .dor-card .dor-img .dor-placeholder span { font-size: 10px; font-weight: 700; color: #a32d2d; text-transform: uppercase; letter-spacing: 1px; opacity: .35; }
+    .dor-card .dor-label { margin-top: 12px; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.3; }
+    .dor-card:hover .dor-img { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: #ffffff; border: 1px solid rgba(192,57,43,.1); border-radius: 14px; overflow: hidden; transition: border-color .2s; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
+    .faq-item.open { border-color: rgba(192,57,43,.3); }
+    .faq-btn { width: 100%; padding: 20px 24px; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif; font-weight: 700; font-size: 15px; color: #1a1a1a; text-align: left; }
+    .faq-btn .icon { font-size: 22px; color: #c0392b; flex-shrink: 0; transition: transform .3s; }
+    .faq-item.open .faq-btn .icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s, padding .3s; padding: 0 24px; }
+    .faq-item.open .faq-answer { max-height: 200px; padding: 0 24px 20px; }
+    .faq-answer p { font-size: 14px; color: #6b6b6b; line-height: 1.7; }
+
+    .cta-final { background: linear-gradient(135deg,#c0392b,#a32d2d); padding: 88px 24px; position: relative; overflow: hidden; text-align: center; }
+    .cta-final .glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle,rgba(255,255,255,.12),transparent 65%); pointer-events: none; }
+    .cta-final .inner { position: relative; max-width: 680px; margin: 0 auto; }
+    .cta-final h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif; font-size: clamp(28px,4.5vw,44px); color: #ffffff; letter-spacing: 0px; line-height: 1.1; margin-bottom: 16px; font-weight: 900; }
+    .cta-final .grad { background: none; -webkit-text-fill-color: #ffffff; }
+    .cta-final p.sub { font-size: 17px; color: rgba(255,255,255,.8); margin-bottom: 40px; line-height: 1.7; }
+    .cta-final .btn-primary { background: #ffffff; color: #c0392b; font-size: 18px; padding: 20px 56px; border-radius: 14px; box-shadow: 0 8px 0 #d8d8d8, 0 18px 34px rgba(0,0,0,.18); animation: none; }
+    .cta-final .btn-primary:hover { background: #fef5f4; box-shadow: 0 10px 0 #d8d8d8, 0 24px 44px rgba(0,0,0,.24); }
+    .cta-final .btn-primary:active { box-shadow: 0 3px 0 #d8d8d8, 0 10px 20px rgba(0,0,0,.18); }
+    .cta-final .btn-primary.pulse { animation: pulseLight 1.55s ease-in-out infinite; }
+    .cta-final .footnote { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 20px; }
+
+    footer { background: #1a1a1a; border-top: 1px solid rgba(255,255,255,.06); padding: 40px 24px; text-align: center; }
+    footer .brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; }
+    footer .brand .logo { width: 32px; height: 32px; border-radius: 50%; background: #c0392b; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: #fff; }
+    footer .brand span { font-weight: 800; color: #ffffff; font-size: 15px; }
+    footer p { font-size: 12px; color: #aaa; margin: 0 0 4px; }
+    footer p.small { font-size: 11px; color: #888; }
+
+    @media (max-width:768px) {
+      .hero { padding: 80px 20px 40px; }
+      .hero-content h1 { font-size: clamp(34px,9vw,48px); }
+      .hero-content p { font-size: 15px; }
+
+      .dor-gallery { gap: 16px; }
+      .recipes-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+      .recipe-card .img-wrap { height: 140px; }
+      .recipe-card .info { padding: 12px 14px 14px; }
+      .recipe-card .info h3 { font-size: 13px; }
+      .recipe-card .info p { font-size: 12px; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .benefit-card { padding: 24px 18px; }
+      .benefit-card h3 { font-size: 14px; }
+      .benefit-card p { font-size: 13px; }
+      .sec-cream > .container > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr 1fr !important; }
+      .testimonial-carousel { max-width: 380px; }
+      .rating-box { flex-direction: column; text-align: center; padding: 20px; }
+      .rating-box .score { border-right: none; border-bottom: none; padding-right: 0; padding-bottom: 0; margin-bottom: 0; }
+      .rating-box .score .num { font-size: 40px; }
+      .pricing-grid { max-width: 100%; }
+      .pricing-card .pricing-top { padding: 24px 24px 20px; }
+      .pricing-card .pricing-top h3 { font-size: 18px; }
+      .pricing-card .price .integer { font-size: 48px; }
+      .pricing-card .pricing-body { padding: 24px 24px 28px; }
+      .pricing-card .pricing-body ul li { font-size: 13px; padding: 6px 0; }
+      .faq-btn { padding: 16px 18px; font-size: 14px; }
+      .faq-item.open .faq-answer { max-height: 300px; }
+      .sec-head { margin-bottom: 32px; }
+      .sec-head h2 { font-size: clamp(22px,6vw,30px); }
+      .sec-head p { font-size: 14px; }
+      .cta-final h2 { font-size: clamp(24px,7vw,34px); }
+      .cta-final p.sub { font-size: 15px; }
+      .btn-primary { padding: 16px 32px; font-size: 15px; width: 100%; max-width: 340px; }
+      .btn-primary.small { padding: 12px 24px; font-size: 13px; width: auto; }
+      .cta-final .btn-primary { font-size: 16px; padding: 16px 40px; width: 100%; max-width: 360px; }
+      .pricing-card .btn-primary { font-size: 16px; padding: 16px 32px; }
+      footer { padding: 28px 20px; }
+    }
+
+    @media (max-width:480px) {
+      .hero { padding: 112px 16px 32px; }
+      .hero-content h1 { font-size: 32px; }
+      .hero-content p { font-size: 14px; }
+
+      .dor-gallery { gap: 12px; }
+      .dor-card .dor-img { border-radius: 18px; }
+      .dor-card .dor-label { font-size: 13px; }
+
+      .recipes-grid { grid-template-columns: 1fr; gap: 12px; }
+      .recipe-card .img-wrap { height: 180px; }
+
+      .benefits-grid { grid-template-columns: 1fr; gap: 12px; }
+      .benefit-card { padding: 20px 16px; }
+
+      .sec-head { margin-bottom: 24px; }
+      .sec-head h2 { font-size: 24px; }
+      .sec-head p { font-size: 13px; }
+
+      .cta-final h2 { font-size: 26px; }
+      .cta-final p.sub { font-size: 14px; }
+      .cta-final .btn-primary { max-width: 100%; }
+
+      .testimonial-carousel { max-width: min(100%, 340px); }
+      .testimonial-viewport { border-radius: 18px; }
+      .testimonial-btn { width: 40px; height: 40px; }
+      .testimonial-btn svg { width: 18px; height: 18px; }
+      .testimonial-btn[data-testimonial-prev] { left: 6px; }
+      .testimonial-btn[data-testimonial-next] { right: 6px; }
+
+      .rating-box { padding: 16px; }
+      .rating-box .score .num { font-size: 36px; }
+
+      .pricing-card .pricing-body { padding: 20px 18px 24px; }
+      .pricing-card .pricing-body ul li { font-size: 12px; padding: 6px 0; }
+      .pricing-card .btn-primary { font-size: 15px; padding: 14px 24px; }
+
+      .faq-btn { padding: 14px 16px; font-size: 13px; }
+      .faq-answer p { font-size: 13px; }
+      .faq-item.open .faq-answer { max-height: 300px; }
+
+      .sec { padding: 48px 0; }
+      .cta-final { padding: 48px 16px; }
+      .site-header { padding: 10px 16px; height: 48px; }
+      .site-header .brand .logo-icon { width: 28px; height: 28px; border-radius: 8px; }
+      .site-header .brand .logo-icon svg { width: 15px; height: 15px; }
+      .site-header .brand .brand-text strong { font-size: 14px; }
+      .site-header .brand .brand-text span { font-size: 8px; }
+      .container { padding: 0 16px; }
+      footer p { font-size: 11px; }
+      footer { padding: 24px 16px; }
+      .btn-primary { max-width: 100%; }
+    }
+  </style>
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+<script>
+  window.pixelId = "6a47088479daea7ffdc6c208";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.47 5.47 0 0 1 9.18 0A4 4 0 0 1 18 13.87V17H6Z"/><line x1="6" y1="17" x2="18" y2="17"/><rect x="9" y="11" width="6" height="2"/></svg></div>
+    <div class="brand-text">
+       <strong>Bom de Prato</strong>
+      </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>DESCUBRA COMO COMER <span class="grad">CARNE MO&Iacute;DA POR 30 DIAS</span> SEM REPETIR NENHUM PRATO</h1>
+    </div>
+    <div class="recipe-carousel">
+      <div class="recipe-carousel-track">
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-1.webp" alt="Receitas com carne moída - empanadas e almôndegas" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-2.webp" alt="Receitas com carne moída - pimentões, lasanha e massa" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-3.webp" alt="Receitas com carne moída - hambúrguer e espetinho" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-4.webp" alt="Receitas com carne moída - panqueca e bolinhos" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-5.webp" alt="Receitas com carne moída - burrito e abobrinha" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-1.webp" alt="Receitas com carne moída" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-2.webp" alt="Receitas com carne moída" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-3.webp" alt="Receitas com carne moída" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-4.webp" alt="Receitas com carne moída" loading="lazy" /></div>
+        <div class="recipe-carousel-card"><img decoding="async" src="img/receita-collage-5.webp" alt="Receitas com carne moída" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p>Um guia direto para transformar carne mo&iacute;da em almo&ccedil;os, jantares e lanches diferentes, usando ingredientes simples e uma organiza&ccedil;&atilde;o f&aacute;cil de seguir.</p>
+      <a href="#receitas" class="btn-primary">Quero Conhecer Mais</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-white reveal">
+  <div class="container">
+    <div class="sec-head">
+      <h2>VOC&Ecirc; TAMB&Eacute;M SENTE QUE EST&Aacute; <span class="grad">COZINHANDO SEMPRE A MESMA COISA?</span></h2>
+      <p>A carne mo&iacute;da &eacute; um dos ingredientes mais vers&aacute;teis e baratos da sua geladeira, mas voc&ecirc; provavelmente est&aacute; preso na rotina e desperdi&ccedil;ando o potencial dela. Voc&ecirc; se identifica com alguma dessas situa&ccedil;&otilde;es?</p>
+    </div>
+    <div class="dor-gallery">
+      <div class="dor-card">
+        <div class="dor-img">
+          <img decoding="async" src="img/dor-01.webp" alt="Enjoa do mesmo prato todo dia" loading="lazy" />
+          <div class="dor-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1.5" fill="currentColor" stroke="none"/><path d="M8 16c0-2 4-2 4-2s4 0 4 2"/></svg>
+            <span>Ilustra&ccedil;&atilde;o</span>
+          </div>
+        </div>
+        <div class="dor-label">Enjoa do mesmo prato todo dia</div>
+      </div>
+      <div class="dor-card">
+        <div class="dor-img">
+          <img decoding="async" src="img/dor-02.webp" alt="Gasta mais por não saber variar" loading="lazy" />
+          <div class="dor-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="12" x2="8" y2="10"/><line x1="12" y1="12" x2="16" y2="10"/></svg>
+            <span>Ilustra&ccedil;&atilde;o</span>
+          </div>
+        </div>
+        <div class="dor-label">Gasta mais por n&atilde;o saber variar</div>
+      </div>
+      <div class="dor-card">
+        <div class="dor-img">
+          <img decoding="async" src="img/dor-03.webp" alt="Não tem ideia do que fazer diferente" loading="lazy" />
+          <div class="dor-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v2M12 14v.01"/></svg>
+            <span>Ilustra&ccedil;&atilde;o</span>
+          </div>
+        </div>
+        <div class="dor-label">N&atilde;o tem ideia do que fazer diferente</div>
+      </div>
+      <div class="dor-card">
+        <div class="dor-img">
+          <img decoding="async" src="img/dor-04.webp" alt="Cardápio monótono e sem graça" loading="lazy" />
+          <div class="dor-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24"><path d="M11 2L2 12h5v10h8V12h5L11 2z"/><line x1="11" y1="18" x2="11" y2="22"/></svg>
+            <span>Ilustra&ccedil;&atilde;o</span>
+          </div>
+        </div>
+        <div class="dor-label">Card&aacute;pio mon&oacute;tono e sem gra&ccedil;a</div>
+      </div>
+      <div class="dor-card">
+        <div class="dor-img">
+          <img decoding="async" src="img/dor-05.webp" alt="Acha que carne moída é só molho e carne" loading="lazy" />
+          <div class="dor-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="10" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1.5" fill="currentColor" stroke="none"/><path d="M8 16c2 2 6 2 8 0"/></svg>
+            <span>Ilustra&ccedil;&atilde;o</span>
+          </div>
+        </div>
+        <div class="dor-label">Acha que carne mo&iacute;da &eacute; s&oacute; molho e carne</div>
+      </div>
+      <div class="dor-card">
+        <div class="dor-img">
+          <img decoding="async" src="img/dor-06.webp" alt="Repete sempre as mesmas 2 ou 3 receitas" loading="lazy" />
+          <div class="dor-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.5 18a9 9 0 0 0 14.8-3.2"/><polyline points="23 20 23 14 17 14"/><path d="M20.5 6a9 9 0 0 0-14.8 3.2"/></svg>
+            <span>Ilustra&ccedil;&atilde;o</span>
+          </div>
+        </div>
+        <div class="dor-label">Repete sempre as mesmas 2 ou 3 receitas</div>
+      </div>
+    </div>
+    <div style="text-align:center;font-size:18px;color:#c0392b;font-weight:700;font-style:italic;margin-bottom:8px">Mas existe um jeito muito melhor e mais gostoso.</div>
+  </div>
+</section>
+
+<section id="receitas" class="sec sec-red-light reveal">
+  <div class="container">
+    <div class="sec-head">
+      <h2>OLHA AS RECEITAS QUE VOC&Ecirc; VAI <span class="grad">CONSEGUIR FAZER EM CASA</span></h2>
+      <p>Receitas para todos os momentos — lanche, almo&ccedil;o, jantar ou conforto depois de um dia longo.</p>
+    </div>
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/escondidinho-carne-moida.webp" alt="Escondidinho de Carne Moída Flash" loading="lazy" /><span class="tag">Tradicional</span></div>
+        <div class="info"><h3>Escondidinho de Carne Mo&iacute;da Flash</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 10 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/abobrinha-recheada.webp" alt="Abobrinha Recheada Fit Premium" loading="lazy" /><span class="tag">Fit</span></div>
+        <div class="info"><h3>Abobrinha Recheada Fit Premium</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 15 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/polpettone-recheado.webp" alt="Polpettone Recheado Surpresa" loading="lazy" /><span class="tag">Especial</span></div>
+        <div class="info"><h3>Polpettone Recheado Surpresa</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 25 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/rocambole-carne-moida.webp" alt="Rocambole de Carne Festa" loading="lazy" /><span class="tag">Festivo</span></div>
+        <div class="info"><h3>Rocambole de Carne Festa</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 30 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/empanadas-carne-moida.webp" alt="Empanadas Crocantes de Ouro" loading="lazy" /><span class="tag">Caf&eacute;</span></div>
+        <div class="info"><h3>Empanadas Crocantes de Ouro</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 15 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/burrito-carne-moida.webp" alt="Burrito de Carne Moída Turbo" loading="lazy" /><span class="tag">Lanche r&aacute;pido</span></div>
+        <div class="info"><h3>Burrito de Carne Mo&iacute;da Turbo</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 12 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/panqueca-carne-moida.webp" alt="Panqueca de Carne Moída Express" loading="lazy" /><span class="tag">Cl&aacute;ssico</span></div>
+        <div class="info"><h3>Panqueca de Carne Mo&iacute;da Express</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 12 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/HAMBURGUER-ARTESANAL.webp" alt="Hamburguer Artesanal Suculento" loading="lazy" /><span class="tag">Lanches</span></div>
+        <div class="info"><h3>Hamb&uacute;rguer Artesanal Suculento</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 10 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/almondegas-molho.webp" alt="Almondegas ao Molho da Vovo" loading="lazy" /><span class="tag">Aperitivo</span></div>
+        <div class="info"><h3>Alm&ocirc;ndegas ao Molho da Vov&oacute;</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 20 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/pimentao-recheado.webp" alt="Pimentao Recheado Colorido" loading="lazy" /><span class="tag">Light</span></div>
+        <div class="info"><h3>Piment&atilde;o Recheado Colorido</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 15 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/lasanha-carne-moida.webp" alt="Lasanha de Carne Moída Gratinada" loading="lazy" /><span class="tag">Prato principal</span></div>
+        <div class="info"><h3>Lasanha de Carne Mo&iacute;da Gratinada</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 25 min</span></div>
+      </div>
+      <div class="recipe-card">
+        <div class="img-wrap"><img decoding="async" src="img/macarrao-bolonhesa.webp" alt="Macarrao a Bolonhesa Cremoso" loading="lazy" /><span class="tag">Massa</span></div>
+        <div class="info"><h3>Macarr&atilde;o &agrave; Bolonhesa Cremoso</h3><span style="display:block;color:#c0392b;font-size:12px;font-weight:600">&bull; 15 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-red-light reveal">
+  <div class="container">
+    <div class="sec-head">
+      <h2>O QUE FAZ ESSE GUIA SER <span class="grad">INDISPENS&Aacute;VEL NA SUA COZINHA</span></h2>
+    </div>
+    <ul style="list-style:none;max-width:680px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6px 36px;padding:0">
+      <li style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#1a1a1a;padding:10px 0">
+        <span style="width:22px;height:22px;border-radius:50%;background:#c0392b;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        120 receitas testadas e variadas
+      </li>
+      <li style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#1a1a1a;padding:10px 0">
+        <span style="width:22px;height:22px;border-radius:50%;background:#c0392b;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Ingredientes baratos e f&aacute;ceis de encontrar
+      </li>
+      <li style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#1a1a1a;padding:10px 0">
+        <span style="width:22px;height:22px;border-radius:50%;background:#c0392b;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Passo a passo simples para iniciantes
+      </li>
+      <li style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#1a1a1a;padding:10px 0">
+        <span style="width:22px;height:22px;border-radius:50%;background:#c0392b;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Pratos prontos em minutos
+      </li>
+      <li style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#1a1a1a;padding:10px 0">
+        <span style="width:22px;height:22px;border-radius:50%;background:#c0392b;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Acesse no celular, tablet ou computador
+      </li>
+      <li style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#1a1a1a;padding:10px 0">
+        <span style="width:22px;height:22px;border-radius:50%;background:#c0392b;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Imprima e cole na geladeira
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec-white reveal">
+  <div class="container">
+    <div class="sec-head">
+      <h2>GARANTINDO HOJE VOC&Ecirc; AINDA LEVA <span class="grad">UM KIT DE B&Ocirc;NUS COMPLETO</span></h2>
+      <p>Produtos extras com valor real, somados ao material principal, para voc&ecirc; levar um pacote completo pagando s&oacute; a oferta de hoje.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card" style="padding:0;overflow:hidden;text-align:center">
+        <img src="img/bonus-frango.webp" alt="100 Receitas de Frango" style="width:100%;height:360px;object-fit:cover;display:block" loading="lazy" />
+        <div style="padding:22px 16px 20px">
+          <h3 style="font-size:15px;margin-bottom:8px;font-weight:700">100 Receitas de Frango Para Impressionar em Refei&ccedil;&otilde;es Baratas</h3>
+          <p style="font-size:13px;color:#666;line-height:1.55;margin-bottom:12px">Um produto extra para transformar frango simples em almo&ccedil;os, jantares e marmitas com cara de comida caprichada.</p>
+          <span style="display:inline-block;background:#fdecea;color:#a32d2d;font-size:12px;font-weight:800;padding:4px 14px;border-radius:100px"><span style="text-decoration:line-through;color:#777;margin-right:6px">R$34,90</span> Gr&aacute;tis hoje</span>
+        </div>
+      </div>
+      <div class="benefit-card" style="padding:0;overflow:hidden;text-align:center">
+        <img src="img/bonus-cardapio.webp" alt="Cardápio Semanal Econômico" style="width:100%;height:360px;object-fit:cover;display:block" loading="lazy" />
+        <div style="padding:22px 16px 20px">
+          <h3 style="font-size:15px;margin-bottom:8px;font-weight:700">Card&aacute;pio Semanal Econ&ocirc;mico Para Almo&ccedil;os e Jantares</h3>
+          <p style="font-size:13px;color:#666;line-height:1.55;margin-bottom:12px">Combina&ccedil;&otilde;es prontas para organizar a semana, reaproveitar ingredientes e evitar aquela d&uacute;vida do que cozinhar.</p>
+          <span style="display:inline-block;background:#fdecea;color:#a32d2d;font-size:12px;font-weight:800;padding:4px 14px;border-radius:100px"><span style="text-decoration:line-through;color:#777;margin-right:6px">R$39,90</span> Gr&aacute;tis hoje</span>
+        </div>
+      </div>
+      <div class="benefit-card" style="padding:0;overflow:hidden;text-align:center">
+        <img src="img/bonus-marmitas.webp" alt="30 Marmitas Congeláveis" style="width:100%;height:360px;object-fit:cover;display:block" loading="lazy" />
+        <div style="padding:22px 16px 20px">
+          <h3 style="font-size:15px;margin-bottom:8px;font-weight:700">30 Marmitas Congel&aacute;veis Para Economizar Tempo e Dinheiro</h3>
+          <p style="font-size:13px;color:#666;line-height:1.55;margin-bottom:12px">Um produto extra com combina&ccedil;&otilde;es prontas para montar marmitas gostosas, congelar sem perder sabor e ter comida resolvida na semana.</p>
+          <span style="display:inline-block;background:#fdecea;color:#a32d2d;font-size:12px;font-weight:800;padding:4px 14px;border-radius:100px"><span style="text-decoration:line-through;color:#777;margin-right:6px">R$44,90</span> Gr&aacute;tis hoje</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin:32px auto 0;font-size:16px;color:#1a1a1a;font-weight:700;max-width:720px;background:#fff7e8;border:1px solid #ffd58a;border-radius:18px;padding:18px 22px;box-shadow:0 8px 28px rgba(0,0,0,.05)">
+      Somando o material principal e os b&ocirc;nus, voc&ecirc; levaria <span style="color:#c0392b;font-weight:900">R$149,60 em produtos</span>. Hoje, os b&ocirc;nus entram de gra&ccedil;a.
+    </div>
+  </div>
+</section>
+
+<section id="ofertas" class="sec sec-red-light reveal">
+  <div class="container">
+    <div class="sec-head">
+      <h2>FACILITE SUA VIDA AGORA E ADQUIRA <span class="grad">120 RECEITAS DE CARNE MO&Iacute;DA</span></h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-top">
+          <div class="popular" style="text-transform:none;letter-spacing:.5px" id="ofertaBadge">Oferta exclusiva v&aacute;lida hoje</div>
+          <h3 style="font-size:clamp(28px,5vw,42px);font-weight:900;line-height:1.08;padding:12px 0 8px">TUDO COM CARNE<br>MO&Iacute;DA</h3>
+          <div class="price">
+            <div class="anchor-price">Valor total: R$ 149,60</div>
+            <div class="price-label">Hoje por apenas</div>
+            <span class="currency">R$</span>
+            <span class="integer">29</span>
+            <span class="cents">,90</span>
+          </div>
+        </div>
+        <div class="pricing-body">
+          <ul>
+            <li><span class="check">&#x2713;</span> Guia Completo com 120 Receitas de Carne Mo&iacute;da</li>
+            <li><span class="check">&#x2713;</span> Entrega imediata e autom&aacute;tica</li>
+            <li><span class="check">&#x2713;</span> Acesso vital&iacute;cio + Atualiza&ccedil;&otilde;es Gratuitas</li>
+            <li><span class="check">&#x2713;</span> Lista de compras inteligente inclu&iacute;da no material</li>
+            <li><span class="check">&#x2713;</span> Ideias pr&aacute;ticas de receitas de uma panela s&oacute;</li>
+            <li><span class="check">&#x2713;</span> Produto principal: 120 Receitas de Carne Mo&iacute;da <span style="color:#777;font-size:12px;margin-left:auto;font-weight:800">R$29,90</span></li>
+            <li><span class="check">&#x2713;</span> B&ocirc;nus: 100 Receitas de Frango Para Impressionar <span style="color:#119955;font-size:12px;margin-left:auto;font-weight:800"><span style="color:#888;text-decoration:line-through;margin-right:6px">R$34,90</span>GR&Aacute;TIS</span></li>
+            <li><span class="check">&#x2713;</span> B&ocirc;nus: Card&aacute;pio Semanal Econ&ocirc;mico <span style="color:#119955;font-size:12px;margin-left:auto;font-weight:800"><span style="color:#888;text-decoration:line-through;margin-right:6px">R$39,90</span>GR&Aacute;TIS</span></li>
+            <li><span class="check">&#x2713;</span> B&ocirc;nus: 30 Marmitas Congel&aacute;veis <span style="color:#119955;font-size:12px;margin-left:auto;font-weight:800"><span style="color:#888;text-decoration:line-through;margin-right:6px">R$44,90</span>GR&Aacute;TIS</span></li>
+            <li><span class="check">&#x2713;</span> Soma de tudo: R$149,60. Hoje voc&ecirc; paga s&oacute; R$29,90.</li>
+          </ul>
+          <div class="urgency-note">Acesso imediato. Condi&ccedil;&atilde;o especial dispon&iacute;vel por pouco tempo.</div>
+          <a href="https://pay.lowify.com.br/checkout.php?product_id=72by8X" class="btn-primary buy-button" target="_blank">&#x1F37D;&#xFE0F; QUERO AS RECEITAS COM OS B&Ocirc;NUS!</a>
+        </div>
+      </div>
+    </div>
+    <div class="guarantee-section">
+      <img src="img/garantia-7-dias.png" alt="Garantia de 7 dias" style="width:140px;height:140px;object-fit:contain;margin:0 auto 16px;display:block;filter:drop-shadow(0 8px 24px rgba(0,0,0,.18));" />
+      <h3>Garantia Incondicional de 7 Dias</h3>
+      <p>Voc&ecirc; pode acessar o material, testar as receitas e decidir com calma. Se por qualquer motivo n&atilde;o gostar, basta pedir reembolso dentro de 7 dias e devolvemos 100% do valor pago.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-white reveal">
+  <div class="container">
+    <div class="sec-head">
+      <h2>1.386 PESSOAS J&Aacute; <span class="grad">TRANSFORMARAM SUA ROTINA NA COZINHA</span></h2>
+      <p>Resultados reais de quem aplicou as receitas na pr&aacute;tica</p>
+    </div>
+
+    <div class="rating-box">
+      <div class="score">
+        <div class="num">4.9</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="total">1.386 avalia&ccedil;&otilde;es</div>
+      </div>
+    </div>
+
+    <div class="testimonial-carousel" aria-label="Depoimentos de clientes">
+      <div class="testimonial-viewport">
+        <button class="testimonial-btn" type="button" data-testimonial-prev aria-label="Depoimento anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-slide"><img decoding="async" src="img/depoimento-novo-patricia.webp" alt="Depoimento de Patrícia Lima" loading="lazy" /></div>
+          <div class="testimonial-slide"><img decoding="async" src="img/depoimento-novo-camila.webp" alt="Depoimento de Camila Rocha" loading="lazy" /></div>
+          <div class="testimonial-slide"><img decoding="async" src="img/depoimento-novo-juliana.webp" alt="Depoimento de Juliana Costa" loading="lazy" /></div>
+          <div class="testimonial-slide"><img decoding="async" src="img/depoimento-novo-larissa.webp" alt="Depoimento de Larissa Costa" loading="lazy" /></div>
+        </div>
+        <button class="testimonial-btn" type="button" data-testimonial-next aria-label="Pr&oacute;ximo depoimento"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+      <div class="testimonial-nav">
+        <div class="testimonial-dots" id="testimonialDots" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <div class="urgency-note">Acesso imediato. Poucas condi&ccedil;&otilde;es promocionais dispon&iacute;veis.</div>
+      <a href="https://pay.lowify.com.br/checkout.php?product_id=72by8X" class="btn-primary small pulse" target="_blank">Quero Conhecer Mais</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-white reveal">
+  <div class="container-sm">
+    <div class="sec-head">
+      <h2>D&Uacute;VIDAS <span class="grad">FREQUENTES</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="this.parentElement.classList.toggle('open')">
+          <span>Como vou receber o material?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Assim que o pagamento for confirmado, voc&ecirc; recebe o acesso automaticamente por e-mail — em segundos. Nada de esperar. Nada de frete. Tudo digital, dispon&iacute;vel na hora no seu celular, tablet ou computador.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="this.parentElement.classList.toggle('open')">
+          <span>Preciso saber cozinhar para usar este guia?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer"><p>De jeito nenhum. Cada receita foi escrita para quem est&aacute; come&ccedil;ando agora — com passo a passo simples, ingredientes f&aacute;ceis de encontrar e sem nenhum termo complicado. Se voc&ecirc; sabe ligar o fog&atilde;o, voc&ecirc; consegue fazer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="this.parentElement.classList.toggle('open')">
+          <span>S&atilde;o receitas repetidas que j&aacute; vi em todo lugar?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer"><p>N&atilde;o. As 120 receitas foram selecionadas para surpreender — do escondidinho cremoso ao hamb&uacute;rguer artesanal, de pratos r&aacute;pidos para o dia a dia a op&ccedil;&otilde;es especiais para receber em casa. Voc&ecirc; vai ter ideias para meses sem repetir nenhum prato.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="this.parentElement.classList.toggle('open')">
+          <span>Serve para quem est&aacute; de dieta ou quer emagrecer?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Sim. O material traz receitas variadas e voc&ecirc; pode adaptar acompanhamentos e por&ccedil;&otilde;es conforme sua rotina. A ideia &eacute; facilitar o preparo sem deixar o card&aacute;pio repetitivo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="this.parentElement.classList.toggle('open')">
+          <span>E se eu comprar e n&atilde;o gostar? Perco meu dinheiro?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer"><p>N&atilde;o existe esse risco. Voc&ecirc; tem 7 dias de garantia incondicional. Se por qualquer motivo n&atilde;o ficar satisfeita, &eacute; s&oacute; pedir o reembolso — sem burocracia, sem perguntas, 100% do seu dinheiro de volta. O risco &eacute; todo nosso.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="this.parentElement.classList.toggle('open')">
+          <span>O livro pode ser impresso?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Sim! Voc&ecirc; pode acessar pelo celular, tablet ou computador — e se preferir, imprimir e deixar colado na geladeira para consultar na hora de cozinhar.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="glow"></div>
+  <div class="inner">
+    <h2>CHEGA DE REPETIR<br><span class="grad">O MESMO PRATO TODO DIA.</span></h2>
+    <div class="urgency-note" style="color:rgba(255,255,255,.9);margin-bottom:16px">Acesso imediato. Oferta especial por tempo limitado.</div>
+    <a href="https://pay.lowify.com.br/checkout.php?product_id=72by8X" class="btn-primary pulse" target="_blank">&#x1F37D;&#xFE0F; QUERO AS RECEITAS COM OS B&Ocirc;NUS!</a>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">
+    <div class="logo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.47 5.47 0 0 1 9.18 0A4 4 0 0 1 18 13.87V17H6Z"/><line x1="6" y1="17" x2="18" y2="17"/><rect x="9" y="11" width="6" height="2"/></svg></div>
+    <span>Bom de Prato</span>
+  </div>
+  <p>&copy; 2026 - Todos os direitos reservados</p>
+  <p class="small">Este produto &eacute; entregue em formato digital. Ap&oacute;s a confirma&ccedil;&atilde;o do pagamento, o acesso &eacute; enviado imediatamente.</p>
+</footer>
+
+<script>
+  function atualizarDataOferta() {
+    const ofertaBadge = document.getElementById('ofertaBadge');
+    if (!ofertaBadge) return;
+
+    const hoje = new Date();
+    const datas = [-2, -1, 0].map((dias) => new Date(
+      hoje.getFullYear(),
+      hoje.getMonth(),
+      hoje.getDate() + dias
+    ));
+    const mesmoMes = datas.every((data) =>
+      data.getMonth() === datas[0].getMonth() &&
+      data.getFullYear() === datas[0].getFullYear()
+    );
+
+    ofertaBadge.textContent = `Oferta Válida Somente Nos Dias ${datas[0].getDate()}, ${datas[1].getDate()}, ${datas[2].getDate()}`;
+  }
+
+  atualizarDataOferta();
+
+  const testimonialTrack = document.getElementById('testimonialTrack');
+  const testimonialDots = document.getElementById('testimonialDots');
+  const testimonialSlides = testimonialTrack ? Array.from(testimonialTrack.children) : [];
+  let testimonialIndex = 0;
+  let testimonialTimer;
+
+  function renderTestimonials() {
+    if (!testimonialTrack || !testimonialSlides.length) return;
+    testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+    if (testimonialDots) {
+      testimonialDots.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === testimonialIndex);
+      });
+    }
+  }
+
+  function goToTestimonial(index) {
+    testimonialIndex = (index + testimonialSlides.length) % testimonialSlides.length;
+    renderTestimonials();
+  }
+
+  function restartTestimonialTimer() {
+    clearInterval(testimonialTimer);
+    testimonialTimer = setInterval(() => goToTestimonial(testimonialIndex + 1), 5000);
+  }
+
+  if (testimonialTrack && testimonialDots && testimonialSlides.length) {
+    testimonialDots.innerHTML = testimonialSlides.map((_, index) => (
+      `<button class="testimonial-dot${index === 0 ? ' active' : ''}" type="button" aria-label="Ver depoimento ${index + 1}"></button>`
+    )).join('');
+
+    testimonialDots.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        goToTestimonial(index);
+        restartTestimonialTimer();
+      });
+    });
+
+    document.querySelector('[data-testimonial-prev]')?.addEventListener('click', () => {
+      goToTestimonial(testimonialIndex - 1);
+      restartTestimonialTimer();
+    });
+
+    document.querySelector('[data-testimonial-next]')?.addEventListener('click', () => {
+      goToTestimonial(testimonialIndex + 1);
+      restartTestimonialTimer();
+    });
+
+    restartTestimonialTimer();
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
