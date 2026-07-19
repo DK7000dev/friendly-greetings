@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host :: --port 8080",
-    "build": "rm -rf dist && mkdir -p dist && cp -r index.html app img dist/",
-    "build:dev": "rm -rf dist && mkdir -p dist && cp -r index.html app img dist/",
+    "build": "rm -rf dist && mkdir -p dist && cp -r index.html app img dist/ && cp app/index.html dist/app.html",
+    "build:dev": "rm -rf dist && mkdir -p dist && cp -r index.html app img dist/ && cp app/index.html dist/app.html",
     "preview": "vite preview --host :: --port 8080"
   },
   "devDependencies": {
