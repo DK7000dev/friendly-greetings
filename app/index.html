@@ -11,203 +11,146 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #ffffff;
-      --surface: #faf6f3;
-      --surface2: #fdecea;
-      --card: #ffffff;
-      --border: rgba(0,0,0,.06);
-      --text: #1a1a1a;
-      --text2: #6b6b6b;
-      --text3: #9a9a9a;
-      --accent: #c0392b;
-      --accent2: #a32d2d;
-      --accent-soft: #e9765b;
+      --bg:#fff; --surface:#faf6f3; --surface2:#fdecea; --card:#fff;
+      --border:rgba(0,0,0,.06); --text:#1a1a1a; --text2:#6b6b6b; --text3:#9a9a9a;
+      --accent:#c0392b; --accent2:#a32d2d; --accent-soft:#e9765b;
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg); color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      padding-bottom: 88px;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    button { font-family: inherit; border: none; cursor: pointer; background: none; }
-
-    .app { max-width: 480px; margin: 0 auto; min-height: 100vh; background: var(--bg); position: relative; }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;padding-bottom:88px}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button{font-family:inherit;border:none;cursor:pointer;background:none;color:inherit}
+    .app{max-width:480px;margin:0 auto;min-height:100vh;background:var(--bg);position:relative}
 
     /* Header */
-    .app-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 22px 8px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand .logo {
-      width: 44px; height: 44px; border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 18px rgba(192,57,43,.28);
-    }
-    .brand .logo svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .brand h1 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; letter-spacing: -.3px; line-height: 1.1; }
-    .brand p { font-size: 11px; color: var(--text2); margin-top: 2px; font-weight: 500; }
-    .search-btn {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: var(--surface); display: flex; align-items: center; justify-content: center;
-      transition: background .2s;
-    }
-    .search-btn:hover { background: var(--surface2); }
-    .search-btn svg { width: 20px; height: 20px; stroke: var(--text); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .app-header{display:flex;align-items:center;justify-content:space-between;padding:20px 22px 8px}
+    .brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+    .brand .logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(192,57,43,.28)}
+    .brand .logo svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .brand h1{font-family:'Playfair Display',serif;font-size:17px;font-weight:800;letter-spacing:-.3px;line-height:1.1}
+    .brand p{font-size:11px;color:var(--text2);margin-top:2px;font-weight:500}
+    .icon-btn{width:44px;height:44px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+    .icon-btn:hover{background:var(--surface2)}
+    .icon-btn svg{width:20px;height:20px;stroke:var(--text);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+    /* Views */
+    .view{display:none;animation:fadeIn .25s ease}
+    .view.active{display:block}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
     /* Hero */
-    .hero {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center;
-      padding: 12px 22px 8px;
-    }
-    .hero-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 34px; line-height: 1.02; font-weight: 800;
-      letter-spacing: -.5px;
-    }
-    .hero-text h2 .accent { color: var(--accent); display: block; }
-    .hero-text p { font-size: 13px; color: var(--text2); margin: 12px 0 18px; line-height: 1.5; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(180deg, var(--accent-soft), var(--accent));
-      color: #fff; font-weight: 700; font-size: 14px;
-      padding: 13px 22px; border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(192,57,43,.28);
-      transition: transform .18s, box-shadow .2s;
-    }
-    .btn-primary:active { transform: translateY(1px); }
-    .btn-primary svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .hero-image {
-      aspect-ratio: 1/1;
-      border-radius: 24px; overflow: hidden;
-      background: var(--surface);
-    }
-    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;padding:12px 22px 8px}
+    .hero-text h2{font-family:'Playfair Display',serif;font-size:32px;line-height:1.02;font-weight:800;letter-spacing:-.5px}
+    .hero-text h2 .accent{color:var(--accent);display:block}
+    .hero-text p{font-size:13px;color:var(--text2);margin:12px 0 18px;line-height:1.5}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--accent-soft),var(--accent));color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:14px;box-shadow:0 6px 16px rgba(192,57,43,.28);transition:transform .18s}
+    .btn-primary:active{transform:translateY(1px)}
+    .btn-primary svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .hero-image{aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:var(--surface)}
+    .hero-image img{width:100%;height:100%;object-fit:cover}
 
-    /* Section header */
-    .section {
-      padding: 26px 22px 8px;
-    }
-    .section-head {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .section-head h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px; font-weight: 700; letter-spacing: -.3px;
-    }
-    .section-head a {
-      font-size: 13px; color: var(--accent); font-weight: 600;
-      display: inline-flex; align-items: center; gap: 4px;
-    }
-    .section-head a svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    /* Sections */
+    .section{padding:26px 22px 8px}
+    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .section-head h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:-.3px}
+    .section-head a{font-size:13px;color:var(--accent);font-weight:600;display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+    .section-head a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
     /* Recipe carousel */
-    .recipes {
-      display: flex; gap: 14px; overflow-x: auto;
-      padding: 4px 22px 8px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    .recipes::-webkit-scrollbar { display: none; }
-    .recipe-card {
-      flex: 0 0 180px; scroll-snap-align: start;
-      display: flex; flex-direction: column;
-    }
-    .recipe-thumb {
-      position: relative;
-      aspect-ratio: 1/1; border-radius: 18px; overflow: hidden;
-      background: var(--surface); margin-bottom: 10px;
-    }
-    .recipe-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .fav-btn {
-      position: absolute; top: 10px; right: 10px;
-      width: 32px; height: 32px; border-radius: 50%;
-      background: rgba(255,255,255,.95);
-      display: flex; align-items: center; justify-content: center;
-      backdrop-filter: blur(6px);
-    }
-    .fav-btn svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: fill .2s; }
-    .fav-btn.on svg { fill: var(--accent); }
-    .recipe-card h4 {
-      font-size: 14px; font-weight: 700; line-height: 1.25;
-      margin-bottom: 6px; color: var(--text);
-    }
-    .recipe-meta { display: flex; align-items: center; gap: 5px; color: var(--text2); font-size: 12px; margin-bottom: 4px; }
-    .recipe-meta svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .recipe-tag { font-size: 12px; color: var(--accent); font-weight: 600; }
+    .recipes{display:flex;gap:14px;overflow-x:auto;padding:4px 22px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+    .recipes::-webkit-scrollbar{display:none}
+    .recipe-card{flex:0 0 180px;scroll-snap-align:start;display:flex;flex-direction:column;cursor:pointer}
+    .recipe-thumb{position:relative;aspect-ratio:1/1;border-radius:18px;overflow:hidden;background:var(--surface);margin-bottom:10px}
+    .recipe-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+    .recipe-card:active .recipe-thumb img{transform:scale(.98)}
+    .fav-btn{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+    .fav-btn svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:fill .2s}
+    .fav-btn.on svg{fill:var(--accent)}
+    .recipe-card h4{font-size:14px;font-weight:700;line-height:1.25;margin-bottom:6px;color:var(--text)}
+    .recipe-meta{display:flex;align-items:center;gap:5px;color:var(--text2);font-size:12px;margin-bottom:4px}
+    .recipe-meta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .recipe-tag{font-size:12px;color:var(--accent);font-weight:600}
 
-    /* Categories */
-    .categories {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
-      padding: 4px 22px 8px;
-    }
-    .cat {
-      background: var(--surface);
-      border-radius: 16px;
-      aspect-ratio: 1/1.05;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 8px;
-      transition: background .2s, transform .15s;
-    }
-    .cat:active { transform: scale(.97); }
-    .cat:hover { background: var(--surface2); }
-    .cat svg { width: 24px; height: 24px; stroke: var(--text); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .cat span { font-size: 11.5px; font-weight: 600; color: var(--text); }
+    /* Categorias */
+    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:4px 22px 8px}
+    .cat{background:var(--surface);border-radius:16px;aspect-ratio:1/1.05;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .15s;cursor:pointer}
+    .cat:active{transform:scale(.97)}
+    .cat:hover{background:var(--surface2)}
+    .cat svg{width:24px;height:24px;stroke:var(--text);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .cat span{font-size:11.5px;font-weight:600;color:var(--text)}
 
-    /* Tip of day */
-    .tip {
-      margin: 8px 22px 12px;
-      background: var(--surface);
-      border-radius: 20px;
-      padding: 14px;
-      display: grid; grid-template-columns: 44px 1fr 96px; gap: 12px; align-items: center;
-    }
-    .tip-icon {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: #fff; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
-    }
-    .tip-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .tip-body h5 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent); font-size: 15px; font-weight: 700; margin-bottom: 4px;
-    }
-    .tip-body p { font-size: 12px; color: var(--text2); line-height: 1.45; }
-    .tip-img {
-      width: 96px; height: 72px; border-radius: 12px; overflow: hidden;
-      background: var(--surface2);
-    }
-    .tip-img img { width: 100%; height: 100%; object-fit: cover; }
+    /* Tip */
+    .tip{margin:8px 22px 12px;background:var(--surface);border-radius:20px;padding:14px;display:grid;grid-template-columns:44px 1fr 96px;gap:12px;align-items:center}
+    .tip-icon{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+    .tip-icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .tip-body h5{font-family:'Playfair Display',serif;color:var(--accent);font-size:15px;font-weight:700;margin-bottom:4px}
+    .tip-body p{font-size:12px;color:var(--text2);line-height:1.45}
+    .tip-img{width:96px;height:72px;border-radius:12px;overflow:hidden;background:var(--surface2)}
+    .tip-img img{width:100%;height:100%;object-fit:cover}
+
+    /* List grid */
+    .list-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:8px 22px 12px}
+    .list-grid .recipe-card{flex:none}
+    .empty{padding:60px 22px;text-align:center;color:var(--text2)}
+    .empty svg{width:56px;height:56px;stroke:var(--text3);fill:none;stroke-width:1.5;margin:0 auto 14px;display:block}
+    .empty h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--text);margin-bottom:6px}
+    .empty p{font-size:13px}
+
+    /* Search bar */
+    .search-wrap{padding:8px 22px 4px}
+    .search-input{width:100%;background:var(--surface);border:none;border-radius:14px;padding:14px 16px 14px 44px;font-family:inherit;font-size:14px;color:var(--text);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><path d='m20 20-3.5-3.5'/></svg>");background-repeat:no-repeat;background-position:16px 50%;background-size:18px}
+    .search-input:focus{outline:2px solid var(--accent-soft);background-color:#fff}
+
+    /* Sub header (back) */
+    .sub-header{display:flex;align-items:center;gap:12px;padding:20px 22px 8px}
+    .sub-header h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:700}
+
+    /* Detail view */
+    .detail-hero{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
+    .detail-hero img{width:100%;height:100%;object-fit:cover}
+    .detail-back{position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:2}
+    .detail-back svg{width:20px;height:20px;stroke:var(--text);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .detail-fav{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:2}
+    .detail-fav svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .detail-fav.on svg{fill:var(--accent)}
+    .detail-body{padding:24px 22px 20px}
+    .detail-tag{display:inline-block;background:var(--surface2);color:var(--accent);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:5px 12px;border-radius:100px;margin-bottom:12px}
+    .detail-body h1{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;line-height:1.15;letter-spacing:-.4px;margin-bottom:12px}
+    .detail-info{display:flex;gap:20px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:22px}
+    .detail-info .item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2);font-weight:600}
+    .detail-info svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .detail-section{margin-bottom:24px}
+    .detail-section h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:12px;color:var(--text)}
+    .detail-section ul{list-style:none}
+    .detail-section li{padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;line-height:1.5;color:var(--text);display:flex;gap:12px;align-items:flex-start}
+    .detail-section li:last-child{border-bottom:none}
+    .detail-section li .step-num{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--surface2);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .detail-section li .bullet{flex-shrink:0;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:8px}
+
+    /* Profile */
+    .profile-view{padding:24px 22px}
+    .profile-card{background:var(--surface);border-radius:20px;padding:24px;text-align:center;margin-bottom:20px}
+    .profile-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:#fff;font-family:'Playfair Display',serif;font-size:32px;font-weight:700}
+    .profile-card h3{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:4px}
+    .profile-card p{color:var(--text2);font-size:13px}
+    .profile-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+    .stat{background:var(--surface);border-radius:16px;padding:18px;text-align:center}
+    .stat .n{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:var(--accent)}
+    .stat .l{font-size:12px;color:var(--text2);font-weight:500;margin-top:2px}
+    .profile-cta{display:block;background:linear-gradient(180deg,var(--accent-soft),var(--accent));color:#fff;border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:14px;box-shadow:0 6px 16px rgba(192,57,43,.28);margin-top:8px}
 
     /* Bottom nav */
-    .bottom-nav {
-      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 100%; max-width: 480px;
-      background: #fff;
-      border-top: 1px solid var(--border);
-      padding: 10px 0 18px;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      z-index: 100;
-    }
-    .nav-item {
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      color: var(--text3); font-size: 11px; font-weight: 600;
-      padding: 6px 0;
-    }
-    .nav-item svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .nav-item.active { color: var(--accent); }
+    .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid var(--border);padding:10px 0 18px;display:grid;grid-template-columns:repeat(4,1fr);z-index:100}
+    .nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--text3);font-size:11px;font-weight:600;padding:6px 0;transition:color .2s}
+    .nav-item svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .nav-item.active{color:var(--accent)}
 
-    @media (max-width: 380px) {
-      .hero-text h2 { font-size: 28px; }
-      .recipe-card { flex-basis: 160px; }
-      .tip { grid-template-columns: 44px 1fr; }
-      .tip-img { display: none; }
+    @media (max-width:380px){
+      .hero-text h2{font-size:26px}
+      .recipe-card{flex-basis:160px}
+      .tip{grid-template-columns:44px 1fr}
+      .tip-img{display:none}
     }
   </style>
 </head>
@@ -215,7 +158,7 @@
   <div class="app">
     <!-- Header -->
     <header class="app-header">
-      <div class="brand">
+      <div class="brand" onclick="goHome()">
         <div class="logo" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11z" transform="translate(-2 0) scale(.85)"/><path d="M6 13c1 3 4 5 6 5s5-2 6-5"/></svg>
         </div>
@@ -224,152 +167,303 @@
           <p>Receitas que conectam</p>
         </div>
       </div>
-      <button class="search-btn" aria-label="Buscar">
+      <button class="icon-btn" onclick="showView('search')" aria-label="Buscar">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       </button>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-text">
-        <h2>Receitas <span class="accent">com carne moída</span></h2>
-        <p>Práticas, deliciosas e perfeitas para o dia a dia.</p>
-        <button class="btn-primary">
-          <svg viewBox="0 0 24 24"><path d="M4 10h16M6 10v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-          Ver receitas
+    <!-- HOME -->
+    <div class="view active" id="view-home">
+      <section class="hero">
+        <div class="hero-text">
+          <h2>Receitas <span class="accent">com carne moída</span></h2>
+          <p>Práticas, deliciosas e perfeitas para o dia a dia.</p>
+          <button class="btn-primary" onclick="showCategory('todas')">
+            <svg viewBox="0 0 24 24"><path d="M4 10h16M6 10v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            Ver receitas
+          </button>
+        </div>
+        <div class="hero-image">
+          <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/almondegas-molho.webp" alt="Prato de carne moída" />
+        </div>
+      </section>
+
+      <div class="section">
+        <div class="section-head">
+          <h3>Receitas em destaque</h3>
+          <a onclick="showCategory('todas')">Ver todas <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="recipes" id="featured-recipes"></div>
+
+      <div class="section"><div class="section-head"><h3>Categorias</h3></div></div>
+      <div class="categories">
+        <button class="cat" onclick="showCategory('rapidas')">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Rápidas</span>
+        </button>
+        <button class="cat" onclick="showCategory('praticas')">
+          <svg viewBox="0 0 24 24"><path d="M5 10h14v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-6z"/><path d="M8 10V8a4 4 0 0 1 8 0v2"/><path d="M4 10h16"/></svg><span>Práticas</span>
+        </button>
+        <button class="cat" onclick="showCategory('dia-a-dia')">
+          <svg viewBox="0 0 24 24"><path d="M8 3v9M8 12a2 2 0 0 0 2-2V4M8 12v9"/><path d="M16 3c-1.5 2-2 4-2 6s.5 3 2 3v9"/></svg><span>Do dia a dia</span>
+        </button>
+        <button class="cat" onclick="showView('favorites')">
+          <svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5 6 .8-4.4 4.2 1.2 6-5.3-3-5.3 3 1.2-6L3.5 9.3l6-.8L12 3z"/></svg><span>Favoritas</span>
         </button>
       </div>
-      <div class="hero-image">
-        <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/almondegas-molho.webp" alt="Prato de carne moída ao molho" />
-      </div>
-    </section>
 
-    <!-- Destaques -->
-    <div class="section">
-      <div class="section-head">
-        <h3>Receitas em destaque</h3>
-        <a href="#">Ver todas <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
+      <div class="section" style="padding-bottom:0"><div class="section-head"><h3 style="font-size:18px">Dica do dia</h3></div></div>
+      <div class="tip">
+        <div class="tip-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.7.6 1 1.4 1 2.3h6c0-.9.3-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg></div>
+        <div class="tip-body">
+          <h5>Dica do dia</h5>
+          <p id="tip-text">Tempere a carne moída com alho, cebola e seus temperos favoritos para realçar o sabor!</p>
+        </div>
+        <div class="tip-img"><img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/abobrinha-recheada.webp" alt="" /></div>
       </div>
-    </div>
-    <div class="recipes">
-      <article class="recipe-card">
-        <div class="recipe-thumb">
-          <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/macarrao-bolonhesa.webp" alt="Macarrão à bolonhesa" />
-          <button class="fav-btn" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></button>
-        </div>
-        <h4>Macarrão à bolonhesa</h4>
-        <div class="recipe-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 30 min</div>
-        <span class="recipe-tag">Fácil</span>
-      </article>
-      <article class="recipe-card">
-        <div class="recipe-thumb">
-          <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/pimentao-recheado.webp" alt="Pimentão recheado" />
-          <button class="fav-btn" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></button>
-        </div>
-        <h4>Pimentão recheado</h4>
-        <div class="recipe-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 45 min</div>
-        <span class="recipe-tag">Médio</span>
-      </article>
-      <article class="recipe-card">
-        <div class="recipe-thumb">
-          <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/escondidinho-carne-moida.webp" alt="Escondidinho de carne moída" />
-          <button class="fav-btn" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></button>
-        </div>
-        <h4>Escondidinho de carne moída</h4>
-        <div class="recipe-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 50 min</div>
-        <span class="recipe-tag">Fácil</span>
-      </article>
-      <article class="recipe-card">
-        <div class="recipe-thumb">
-          <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/lasanha-carne-moida.webp" alt="Lasanha de carne moída" />
-          <button class="fav-btn" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></button>
-        </div>
-        <h4>Lasanha de carne moída</h4>
-        <div class="recipe-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 60 min</div>
-        <span class="recipe-tag">Médio</span>
-      </article>
-      <article class="recipe-card">
-        <div class="recipe-thumb">
-          <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/HAMBURGUER-ARTESANAL.webp" alt="Hambúrguer artesanal" />
-          <button class="fav-btn" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></button>
-        </div>
-        <h4>Hambúrguer artesanal</h4>
-        <div class="recipe-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 25 min</div>
-        <span class="recipe-tag">Fácil</span>
-      </article>
     </div>
 
-    <!-- Categorias -->
-    <div class="section">
-      <div class="section-head"><h3>Categorias</h3></div>
-    </div>
-    <div class="categories">
-      <button class="cat">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <span>Rápidas</span>
-      </button>
-      <button class="cat">
-        <svg viewBox="0 0 24 24"><path d="M5 10h14v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-6z"/><path d="M8 10V8a4 4 0 0 1 8 0v2"/><path d="M4 10h16"/></svg>
-        <span>Práticas</span>
-      </button>
-      <button class="cat">
-        <svg viewBox="0 0 24 24"><path d="M8 3v9M8 12a2 2 0 0 0 2-2V4M8 12v9"/><path d="M16 3c-1.5 2-2 4-2 6s.5 3 2 3v9"/></svg>
-        <span>Do dia a dia</span>
-      </button>
-      <button class="cat">
-        <svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5 6 .8-4.4 4.2 1.2 6-5.3-3-5.3 3 1.2-6L3.5 9.3l6-.8L12 3z"/></svg>
-        <span>Favoritas</span>
-      </button>
+    <!-- SEARCH -->
+    <div class="view" id="view-search">
+      <div class="sub-header">
+        <button class="icon-btn" onclick="goHome()" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <h2>Buscar receitas</h2>
+      </div>
+      <div class="search-wrap">
+        <input class="search-input" id="search-input" type="search" placeholder="Buscar por nome, ex: lasanha..." autocomplete="off" />
+      </div>
+      <div class="list-grid" id="search-results"></div>
     </div>
 
-    <!-- Dica do dia -->
-    <div class="section" style="padding-bottom:0;">
-      <div class="section-head"><h3 style="font-size:18px;">Dica do dia</h3></div>
+    <!-- CATEGORY / LIST -->
+    <div class="view" id="view-category">
+      <div class="sub-header">
+        <button class="icon-btn" onclick="goHome()" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <h2 id="category-title">Receitas</h2>
+      </div>
+      <div class="list-grid" id="category-results"></div>
     </div>
-    <div class="tip">
-      <div class="tip-icon">
-        <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.7.6 1 1.4 1 2.3h6c0-.9.3-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg>
+
+    <!-- FAVORITES -->
+    <div class="view" id="view-favorites">
+      <div class="sub-header">
+        <button class="icon-btn" onclick="goHome()" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <h2>Minhas favoritas</h2>
       </div>
-      <div class="tip-body">
-        <h5>Dica do dia</h5>
-        <p>Tempere a carne moída com alho, cebola e seus temperos favoritos para realçar o sabor!</p>
+      <div id="favorites-results"></div>
+    </div>
+
+    <!-- MY RECIPES (curated / all) -->
+    <div class="view" id="view-my">
+      <div class="sub-header">
+        <button class="icon-btn" onclick="goHome()" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <h2>Todas as receitas</h2>
       </div>
-      <div class="tip-img">
-        <img src="https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/abobrinha-recheada.webp" alt="Carne moída fresca" />
+      <div class="list-grid" id="my-results"></div>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="view" id="view-profile">
+      <div class="sub-header">
+        <button class="icon-btn" onclick="goHome()" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <h2>Perfil</h2>
+      </div>
+      <div class="profile-view">
+        <div class="profile-card">
+          <div class="profile-avatar">C</div>
+          <h3>Cozinheiro(a) do dia</h3>
+          <p>Amante de carne moída</p>
+        </div>
+        <div class="profile-stats">
+          <div class="stat"><div class="n" id="stat-fav">0</div><div class="l">Favoritas</div></div>
+          <div class="stat"><div class="n" id="stat-total">0</div><div class="l">Receitas</div></div>
+        </div>
+        <a href="https://tudocomcarnemoida.online" class="profile-cta">Ver ebook completo (120 receitas)</a>
       </div>
     </div>
+
+    <!-- DETAIL -->
+    <div class="view" id="view-detail"></div>
   </div>
 
   <!-- Bottom nav -->
   <nav class="bottom-nav">
-    <button class="nav-item active">
-      <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-      Início
+    <button class="nav-item active" data-nav="home" onclick="goHome()">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Início
     </button>
-    <button class="nav-item">
-      <svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3z"/></svg>
-      Favoritas
+    <button class="nav-item" data-nav="favorites" onclick="showView('favorites')">
+      <svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3z"/></svg>Favoritas
     </button>
-    <button class="nav-item">
-      <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4v2h6V4"/><path d="M9 11h6M9 15h4"/></svg>
-      Minhas receitas
+    <button class="nav-item" data-nav="my" onclick="showView('my')">
+      <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4v2h6V4"/><path d="M9 11h6M9 15h4"/></svg>Minhas receitas
     </button>
-    <button class="nav-item">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>
-      Perfil
+    <button class="nav-item" data-nav="profile" onclick="showView('profile')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>Perfil
     </button>
   </nav>
 
-  <script>
-    document.querySelectorAll('.fav-btn').forEach(b => {
-      b.addEventListener('click', e => { e.stopPropagation(); b.classList.toggle('on'); });
-    });
-    document.querySelectorAll('.nav-item').forEach(item => {
-      item.addEventListener('click', () => {
-        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-      });
-    });
-  </script>
+<script>
+const IMG = "https://raw.githubusercontent.com/DK7000dev/friendly-greetings/main/img/";
+
+const RECIPES = [
+  {id:"escondidinho", title:"Escondidinho de Carne Moída Flash", img:"escondidinho-carne-moida.webp", tag:"Tradicional", time:10, serves:4,
+    ing:["500 g de carne moída","1 kg de mandioca cozida","1 cebola picada","2 dentes de alho","2 colheres (sopa) de manteiga","1/2 xícara de leite","200 g de queijo muçarela ralado","Sal, pimenta e cheiro-verde a gosto"],
+    prep:["Cozinhe a mandioca até ficar macia, amasse com manteiga e leite formando um purê.","Refogue alho e cebola, junte a carne moída e tempere. Cozinhe até dourar.","Em um refratário, alterne carne e purê, cubra com muçarela.","Leve ao forno alto por 10 minutos até gratinar."]},
+  {id:"abobrinha", title:"Abobrinha Recheada Fit Premium", img:"abobrinha-recheada.webp", tag:"Fit", time:15, serves:4,
+    ing:["4 abobrinhas médias","400 g de carne moída magra","1 tomate picado","1 cebola picada","2 dentes de alho","1 fio de azeite","Orégano, sal e pimenta a gosto","Queijo ralado light para gratinar"],
+    prep:["Corte as abobrinhas ao meio e retire o miolo com uma colher.","Refogue alho, cebola, o miolo picado e a carne moída até dourar. Junte o tomate.","Recheie as abobrinhas, polvilhe queijo por cima.","Asse a 200°C por 15 minutos."]},
+  {id:"polpettone", title:"Polpettone Recheado Surpresa", img:"polpettone-recheado.webp", tag:"Especial", time:25, serves:4,
+    ing:["600 g de carne moída","1 ovo","3 colheres (sopa) de farinha de rosca","150 g de muçarela em cubos","100 g de presunto","Alho, cebola, sal e pimenta"],
+    prep:["Misture carne, ovo, farinha de rosca e temperos.","Abra a mistura, recheie com presunto e muçarela e feche formando um bolão.","Sele em frigideira quente por todos os lados.","Leve ao forno a 200°C por 20 minutos."]},
+  {id:"rocambole", title:"Rocambole de Carne Festa", img:"rocambole-carne-moida.webp", tag:"Festivo", time:30, serves:6,
+    ing:["700 g de carne moída","1 ovo","3 colheres (sopa) de farinha de rosca","200 g de muçarela fatiada","150 g de presunto","4 fatias de bacon","Sal, pimenta, alho e cebola"],
+    prep:["Misture carne, ovo, farinha e temperos. Abra sobre papel-manteiga em retângulo.","Cubra com presunto e muçarela, enrole com ajuda do papel.","Cubra com fatias de bacon.","Asse a 200°C por 30 minutos até dourar."]},
+  {id:"empanadas", title:"Empanadas Crocantes de Ouro", img:"empanadas-carne-moida.webp", tag:"Café", time:15, serves:4,
+    ing:["500 g de carne moída","1 pacote de massa para pastel","1 cebola picada","2 azeitonas picadas","Cominho, sal, pimenta e cheiro-verde","Óleo para fritar"],
+    prep:["Refogue cebola e carne, tempere e junte azeitonas.","Recheie discos de massa, feche em meia-lua apertando as bordas.","Frite em óleo quente até dourar.","Escorra em papel-toalha e sirva."]},
+  {id:"burrito", title:"Burrito de Carne Moída Turbo", img:"burrito-carne-moida.webp", tag:"Lanche rápido", time:12, serves:2,
+    ing:["300 g de carne moída","2 tortilhas grandes","1/2 xícara de feijão preto cozido","1/2 pimentão picado","1/2 cebola","Queijo ralado","Molho de tomate e pimenta a gosto"],
+    prep:["Refogue cebola, pimentão e carne moída até dourar.","Aqueça as tortilhas rapidamente.","Distribua carne, feijão e queijo no centro de cada tortilha.","Enrole apertando bem e sirva."]},
+  {id:"panqueca", title:"Panqueca de Carne Moída Express", img:"panqueca-carne-moida.webp", tag:"Clássico", time:12, serves:4,
+    ing:["1 xícara de farinha de trigo","1 xícara de leite","1 ovo","500 g de carne moída","1 lata de molho de tomate","1 cebola picada","Queijo ralado"],
+    prep:["Bata farinha, leite e ovo. Faça discos finos em frigideira antiaderente.","Refogue cebola e carne, tempere e adicione parte do molho.","Recheie cada panqueca, enrole e disponha em refratário.","Cubra com molho e queijo e leve ao forno por 10 minutos."]},
+  {id:"hamburguer", title:"Hambúrguer Artesanal Suculento", img:"HAMBURGUER-ARTESANAL.webp", tag:"Lanches", time:10, serves:2,
+    ing:["400 g de carne moída (com 20% de gordura)","Sal e pimenta-do-reino","2 pães de hambúrguer","2 fatias de queijo cheddar","Alface, tomate, cebola roxa","Molho da sua preferência"],
+    prep:["Tempere a carne apenas com sal e pimenta e modele 2 discos.","Grelhe em chapa bem quente por 3 minutos de cada lado.","Coloque queijo no topo e deixe derreter.","Monte no pão com salada e molho."]},
+  {id:"almondegas", title:"Almôndegas ao Molho da Vovó", img:"almondegas-molho.webp", tag:"Aperitivo", time:20, serves:4,
+    ing:["500 g de carne moída","1 ovo","3 colheres (sopa) de farinha de rosca","1 cebola ralada","2 dentes de alho","Sal, pimenta e salsinha","1 lata de molho de tomate"],
+    prep:["Misture carne, ovo, farinha, cebola e temperos. Modele bolinhas.","Doure as almôndegas em fio de azeite.","Adicione o molho de tomate e 1/2 xícara de água.","Cozinhe em fogo baixo por 15 minutos."]},
+  {id:"pimentao", title:"Pimentão Recheado Colorido", img:"pimentao-recheado.webp", tag:"Light", time:15, serves:4,
+    ing:["4 pimentões coloridos","400 g de carne moída","1/2 xícara de arroz cozido","1 tomate picado","1 cebola picada","Queijo ralado para gratinar","Sal, pimenta e orégano"],
+    prep:["Corte a tampa dos pimentões e retire as sementes.","Refogue cebola, tomate e carne. Misture com o arroz.","Recheie os pimentões e polvilhe queijo.","Asse a 200°C por 15 minutos."]},
+  {id:"lasanha", title:"Lasanha de Carne Moída Gratinada", img:"lasanha-carne-moida.webp", tag:"Prato principal", time:25, serves:6,
+    ing:["500 g de massa de lasanha pré-cozida","600 g de carne moída","2 latas de molho de tomate","300 g de presunto","300 g de muçarela","Queijo parmesão ralado","Sal, alho e cebola"],
+    prep:["Refogue alho, cebola e carne moída. Junte o molho de tomate e cozinhe 10 minutos.","Em um refratário, faça camadas: molho, massa, presunto, muçarela.","Repita até acabar, terminando com molho e parmesão.","Asse a 200°C por 25 minutos até gratinar."]},
+  {id:"bolonhesa", title:"Macarrão à Bolonhesa Cremoso", img:"macarrao-bolonhesa.webp", tag:"Massa", time:15, serves:4,
+    ing:["500 g de espaguete","500 g de carne moída","1 lata de molho de tomate","1 cebola picada","3 dentes de alho","1 fio de azeite","Sal, pimenta, manjericão e parmesão"],
+    prep:["Cozinhe o espaguete al dente e reserve.","Doure alho e cebola no azeite, junte a carne e tempere.","Adicione o molho de tomate e cozinhe 8 minutos.","Sirva sobre a massa, finalize com manjericão e parmesão."]}
+];
+
+const TIPS = [
+  "Tempere a carne moída com alho, cebola e seus temperos favoritos para realçar o sabor!",
+  "Deixe a frigideira bem quente antes de colocar a carne — assim ela sela e não solta água.",
+  "Uma pitada de açúcar no molho de tomate equilibra a acidez.",
+  "Adicione uma colher de shoyu na carne moída para um sabor umami incrível.",
+  "Sempre descanse hambúrgueres por 2 minutos após grelhar para manter o suco.",
+  "Congele porções de carne já temperada para agilizar receitas do dia a dia."
+];
+
+// State
+let currentView = 'home';
+let favorites = new Set(JSON.parse(localStorage.getItem('favorites') || '[]'));
+
+// Helpers
+function saveFavorites(){ localStorage.setItem('favorites', JSON.stringify([...favorites])); }
+function toggleFav(id, ev){ if(ev){ev.stopPropagation();} favorites.has(id) ? favorites.delete(id) : favorites.add(id); saveFavorites(); renderAll(); }
+
+function recipeCardHTML(r){
+  const on = favorites.has(r.id) ? 'on' : '';
+  return `<article class="recipe-card" onclick="openRecipe('${r.id}')">
+    <div class="recipe-thumb">
+      <img src="${IMG}${r.img}" alt="${r.title}" loading="lazy" />
+      <button class="fav-btn ${on}" onclick="toggleFav('${r.id}', event)" aria-label="Favoritar">
+        <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+      </button>
+    </div>
+    <h4>${r.title}</h4>
+    <div class="recipe-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ${r.time} min</div>
+    <span class="recipe-tag">${r.tag}</span>
+  </article>`;
+}
+
+function emptyHTML(title, msg){
+  return `<div class="empty">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+    <h4>${title}</h4><p>${msg}</p></div>`;
+}
+
+// Rendering
+function renderFeatured(){
+  document.getElementById('featured-recipes').innerHTML = RECIPES.slice(0,6).map(recipeCardHTML).join('');
+}
+function renderFavorites(){
+  const favs = RECIPES.filter(r => favorites.has(r.id));
+  const el = document.getElementById('favorites-results');
+  if(favs.length === 0){
+    el.innerHTML = emptyHTML('Nenhuma favorita ainda', 'Toque no coração de qualquer receita para salvá-la aqui.');
+  } else {
+    el.innerHTML = `<div class="list-grid">${favs.map(recipeCardHTML).join('')}</div>`;
+  }
+  document.getElementById('stat-fav').textContent = favorites.size;
+}
+function renderMy(){
+  document.getElementById('my-results').innerHTML = RECIPES.map(recipeCardHTML).join('');
+  document.getElementById('stat-total').textContent = RECIPES.length;
+}
+function renderCategory(cat){
+  let list = RECIPES, title = 'Todas as receitas';
+  if(cat === 'rapidas'){ list = RECIPES.filter(r => r.time <= 12); title = 'Receitas rápidas'; }
+  else if(cat === 'praticas'){ list = RECIPES.filter(r => r.time <= 20); title = 'Receitas práticas'; }
+  else if(cat === 'dia-a-dia'){ list = RECIPES.filter(r => ['Tradicional','Clássico','Massa','Prato principal','Lanches'].includes(r.tag)); title = 'Do dia a dia'; }
+  document.getElementById('category-title').textContent = title;
+  const el = document.getElementById('category-results');
+  el.innerHTML = list.length ? list.map(recipeCardHTML).join('') : emptyHTML('Nada por aqui', 'Nenhuma receita nesta categoria ainda.');
+}
+function renderSearch(q){
+  q = (q||'').toLowerCase().trim();
+  const list = q ? RECIPES.filter(r => r.title.toLowerCase().includes(q) || r.tag.toLowerCase().includes(q) || r.ing.some(i => i.toLowerCase().includes(q))) : RECIPES;
+  const el = document.getElementById('search-results');
+  el.innerHTML = list.length ? list.map(recipeCardHTML).join('') : emptyHTML('Sem resultados', 'Tente outra palavra, como "lasanha" ou "hambúrguer".');
+}
+function renderDetail(id){
+  const r = RECIPES.find(x => x.id === id);
+  if(!r) return;
+  const on = favorites.has(r.id) ? 'on' : '';
+  document.getElementById('view-detail').innerHTML = `
+    <div class="detail-hero">
+      <img src="${IMG}${r.img}" alt="${r.title}" />
+      <button class="detail-back" onclick="history.back()" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+      <button class="detail-fav ${on}" onclick="toggleFav('${r.id}', event)" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></button>
+    </div>
+    <div class="detail-body">
+      <span class="detail-tag">${r.tag}</span>
+      <h1>${r.title}</h1>
+      <div class="detail-info">
+        <div class="item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ${r.time} min</div>
+        <div class="item"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c.8-3 3.4-5 6-5s4.8 1.8 5.6 4.5"/><path d="M14 18c.6-2 2.2-3 4-3s3 1 3.5 2.5"/></svg> ${r.serves} porções</div>
+      </div>
+      <div class="detail-section">
+        <h3>Ingredientes</h3>
+        <ul>${r.ing.map(i => `<li><div class="bullet"></div><span>${i}</span></li>`).join('')}</ul>
+      </div>
+      <div class="detail-section">
+        <h3>Modo de preparo</h3>
+        <ul>${r.prep.map((p,i) => `<li><div class="step-num">${i+1}</div><span>${p}</span></li>`).join('')}</ul>
+      </div>
+    </div>
+  `;
+}
+function renderAll(){ renderFeatured(); renderFavorites(); renderMy(); }
+
+// Navigation
+function showView(name){
+  currentView = name;
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.nav === name || (name === 'home' && n.dataset.nav === 'home')));
+  window.scrollTo(0,0);
+  if(name === 'favorites') renderFavorites();
+  if(name === 'my') renderMy();
+  if(name === 'search'){ renderSearch(''); setTimeout(() => document.getElementById('search-input').focus(), 100); }
+}
+function goHome(){ showView('home'); }
+function showCategory(cat){ renderCategory(cat); showView('category'); document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active')); document.querySelector('[data-nav="home"]').classList.add('active'); }
+function openRecipe(id){ renderDetail(id); showView('detail'); document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active')); }
+
+// Init
+document.getElementById('search-input').addEventListener('input', e => renderSearch(e.target.value));
+document.getElementById('tip-text').textContent = TIPS[Math.floor(Math.random()*TIPS.length)];
+renderAll();
+</script>
 </body>
 </html>
